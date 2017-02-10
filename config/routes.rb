@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   root 'messages#index'
+  resources :messages , only: [:create]
+  # URI     /
+  # VERB    GET
+  # CONT    messages
+  # ACTION  index
+  # get 'messages/index'#, to: 'messages#index'
+  # URI     messages/index
+  # VERB    GET
+  # CONT    messages
+  # ACTION  index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -29,10 +39,10 @@ Rails.application.routes.draw do
   #   end
 
   # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    # resources :products do
+    #   resources :comments, :sales
+    #   resource :seller
+    # end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
